@@ -1,0 +1,7 @@
+skin	browser		camimoon	chrome/browser/
+skin	communicator	camimoon	chrome/communicator/
+skin	global		camimoon	chrome/global/
+skin	mozapps		camimoon	chrome/mozapps/
+
+skin	os			camimoon	chrome/os/winnt/		os=WINNT	
+skin	os			camimoon	chrome/os/linux/		os=Linux
