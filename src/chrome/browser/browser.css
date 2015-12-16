@@ -644,9 +644,10 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
   -moz-image-region: rect(0 192px 32px 160px);
 }
 
-/* history sidebar button */
+/* history sidebar & menu buttons */
 
-#history-button {
+#history-button,
+#history-menu-button {
   -moz-image-region: rect(0 224px 32px 192px);
 }
 
@@ -800,13 +801,18 @@ toolbar[iconsize="small"] #downloads-button {
   -moz-image-region: rect(0 144px 24px 120px);
 }
 
-/* history sidebar button */
+/* history sidebar & menu buttons */
 
-toolbar[iconsize="small"] #history-button {
+toolbar[iconsize="small"] #history-button,
+toolbar[iconsize="small"] #history-menu-button {
   -moz-image-region: rect(0 168px 24px 144px);
 }
 
-/* bookmark sidebar button */
+toolbar[iconsize="small"] #history-menu-button.toolbarbutton-1 {
+  -moz-box-orient: horizontal;
+}
+
+/* bookmark sidebar & menu buttons */
 
 toolbar[iconsize="small"] #bookmarks-button,
 toolbar[iconsize="small"] #bookmarks-menu-button {
