@@ -757,6 +757,10 @@ toolbar[iconsize="small"] .toolbarbutton-1 {
   list-style-image: url("chrome://browser/skin/Toolbar-small.png");
 }
 
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu"] {
+  -moz-box-orient: horizontal;
+}
+
 toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"] {
   border: 0 !important;
 }
