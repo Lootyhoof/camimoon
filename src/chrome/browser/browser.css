@@ -770,7 +770,7 @@ toolbar[iconsize="small"] .toolbarbutton-1 {
   list-style-image: url("chrome://browser/skin/Toolbar-small.png");
 }
 
-toolbar[iconsize="small"] .toolbarbutton-1[type="menu"] {
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu"]:not(:-moz-any(#back-button, #forward-button)) {
   -moz-box-orient: horizontal;
 }
 
