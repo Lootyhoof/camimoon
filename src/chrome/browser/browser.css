@@ -9,6 +9,21 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
 
+:root {
+  --appmenu-background: linear-gradient(rgb(82,182,247), rgb(10,98,215) 95%);
+  --appmenu-border-color: rgba(6,42,83,.9);
+  --appmenu-border-radius: 4px;
+  --appmenu-box-shadow: 0 1px 0 rgba(255,255,255,.25) inset, 0 0 0 1px rgba(255,255,255,.25) inset;
+  
+  --back-forward-image: url("chrome://browser/skin/back-forward.png");
+  --back-forward-small-image: url("chrome://browser/skin/back-forward-small.png");
+  
+  --toolbarbutton-large-image: url("chrome://browser/skin/Toolbar-large.png");
+  --toolbarbutton-small-image: url("chrome://browser/skin/Toolbar-small.png");
+  
+  --window-text-color: currentColor;
+}
+
 #menubar-items {
   -moz-box-orient: vertical; /* for flex hack */
 }
@@ -21,16 +36,6 @@
   -moz-appearance: none;
   background-color: transparent;
   border-top: none;
-}
-
-#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar #social-toolbar-item {
-  margin-left: 2px;
-  margin-right: 2px;
-}
-
-#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar #social-toolbar-item > .toolbarbutton-1 {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 #personal-bookmarks {
@@ -46,84 +51,53 @@
 #appmenu-button,
 #appmenu-toolbar-button {
   -moz-appearance: none;
-  background: linear-gradient(rgb(247,182,82), rgb(215,98,10) 95%);
+  background: var(--appmenu-background);
   background-clip: padding-box;
-  border-radius: 0 0 4px 4px;
-  border: 1px solid rgba(83,42,6,.9);
-  border-top: none;
-  box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
-              0 0 0 1px rgba(255,255,255,.25) inset;
+  border: 1px solid var(--appmenu-border-color);
+  box-shadow: var(--appmenu-box-shadow);
   color: white;
   text-shadow: 0 0 1px rgba(0,0,0,.7),
                0 1px 1.5px rgba(0,0,0,.5);
   font-weight: bold;
-  padding: 0 1.5em .05em;
-  margin: 0 0 2px;
 }
 
-@media all and (-moz-windows-classic) {
-  #appmenu-button {
-    margin-bottom: 1px;
-  }
-}
-
-@media all and (-moz-windows-default-theme) {
-  #main-window[sizemode="normal"] #appmenu-button {
-    margin-bottom: 5px;
-  }
-}
-
-#appmenu-button,
-#appmenu-toolbar-button {
-  background-image: linear-gradient(rgb(82,182,247), rgb(10,98,215) 95%);
-  border-color: rgba(6,42,83,.9);
-  box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
-              0 0 0 1px rgba(255,255,255,.25) inset;
-}
 #appmenu-button:hover:not(:active):not([open]),
 #appmenu-toolbar-button:hover:not(:active):not([open]) {
-  background-image: radial-gradient(farthest-side at bottom, rgba(89,240,252,.5) 10%, rgba(89,240,252,0) 70%),
-                    radial-gradient(farthest-side at bottom, rgb(60,68,236), rgba(172,229,255,0)),
-                    linear-gradient(rgb(69,170,246), rgb(30,40,209) 95%);
-  border-color: rgba(6,42,83,.9);
-  box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
-              0 0 2px 1px rgba(169,234,250,.7) inset,
-              0 -1px 0 rgba(169,234,250,.5) inset;
+  --appmenu-background: radial-gradient(farthest-side at bottom, rgba(89,240,252,.5) 10%, rgba(89,240,252,0) 70%), radial-gradient(farthest-side at bottom, rgb(60,68,236), rgba(172,229,255,0)), linear-gradient(rgb(69,170,246), rgb(30,40,209) 95%);
+  --appmenu-border-color: rgba(6,42,83,.9);
+  --appmenu-box-shadow: 0 1px 0 rgba(255,255,255,.1) inset, 0 0 2px 1px rgba(169,234,250,.7) inset, 0 -1px 0 rgba(169,234,250,.5) inset;
 }
+
 #appmenu-button:hover:active,
 #appmenu-button[open],
 #appmenu-toolbar-button:hover:active,
 #appmenu-toolbar-button[open] {
-  background-image: linear-gradient(rgb(69,170,246), rgb(0,74,209) 95%);
-  box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
-              0 1px 1px rgba(0,0,0,.2) inset;
+  --appmenu-background: linear-gradient(rgb(69,170,246), rgb(0,74,209) 95%);
+  --appmenu-box-shadow: 0 2px 3px rgba(0,0,0,.4) inset, 0 1px 1px rgba(0,0,0,.2) inset;
 }
 
 #main-window[privatebrowsingmode=temporary] #appmenu-button,
 #main-window[privatebrowsingmode=temporary] #appmenu-toolbar-button {
-  background-image: linear-gradient(rgb(153,38,211), rgb(105,19,163) 95%);
-  border-color: rgba(43,8,65,.9);
+  --appmenu-background: linear-gradient(rgb(153,38,211), rgb(105,19,163) 95%);
+  --appmenu-border-color: rgba(43,8,65,.9);
 }
 
 #main-window[privatebrowsingmode=temporary] #appmenu-button:hover:not(:active):not([open]),
 #main-window[privatebrowsingmode=temporary] #appmenu-toolbar-button:hover:not(:active):not([open]) {
-  background-image: radial-gradient(farthest-side at bottom, rgba(240,193,255,.5) 10%, rgba(240,193,255,0) 70%),
-                    radial-gradient(farthest-side at bottom, rgb(192,81,247), rgba(236,172,255,0)),
-                    linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%);
-  border-color: rgba(43,8,65,.9);
-  box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
-              0 0 2px 1px rgba(240,193,255,.7) inset,
-              0 -1px 0 rgba(240,193,255,.5) inset;
+  --appmenu-background: radial-gradient(farthest-side at bottom, rgba(240,193,255,.5) 10%, rgba(240,193,255,0) 70%), radial-gradient(farthest-side at bottom, rgb(192,81,247), rgba(236,172,255,0)), linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%);
+  --appmenu-border-color: rgba(43,8,65,.9);
+  --appmenu-box-shadow: 0 1px 0 rgba(255,255,255,.1) inset, 0 0 2px 1px rgba(240,193,255,.7) inset, 0 -1px 0 rgba(240,193,255,.5) inset;
 }
 
 #main-window[privatebrowsingmode=temporary] #appmenu-button:hover:active,
 #main-window[privatebrowsingmode=temporary] #appmenu-button[open],
 #main-window[privatebrowsingmode=temporary] #appmenu-toolbar-button:hover:active,
 #main-window[privatebrowsingmode=temporary] #appmenu-toolbar-button[open] {
-  background-image: linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%);
+  --appmenu-background: linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%);
 }
 
-#appmenu-button > .button-box {
+#appmenu-button > .button-box,
+#appmenu-toolbar-button > .button-box {
   border-style: none;
   padding: 0;
 }
@@ -160,57 +134,6 @@
 
 #appmenuPrimaryPane {
   -moz-border-end: 1px solid ThreeDShadow;
-}
-
-@media all and (-moz-windows-default-theme) {
-  #appmenu-popup {
-    -moz-appearance: none;
-    background: white;
-    border: 1px solid ThreeDShadow;
-  }
-  #appmenuPrimaryPane {
-    background-color: rgba(255,255,255,0.5);
-    padding: 2px;
-    -moz-border-end: none;
-  }
-  #appmenuSecondaryPane {
-    background-color: #f1f5fb;
-    box-shadow: 1px 0 2px rgb(204,214,234) inset;
-    -moz-padding-start: 3px;
-    -moz-padding-end: 2px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
-  }
-  #appmenuSecondaryPane:-moz-locale-dir(rtl) {
-    box-shadow: -1px 0 2px rgb(204,214,234) inset;
-  }
-
-
-  #appmenuSecondaryPane menupopup {
-    -moz-appearance: none;
-    background-color: #f1f5fb;
-    border: 1px solid ThreeDShadow;
-    padding: 2px;
-  }
-
-
-  .appmenu-menuseparator {
-    -moz-appearance: none;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    -moz-margin-start: calc(1.45em + 4px);
-    padding: 0;
-    border-top: 1px solid #d6e5f5;
-    border-bottom: none;
-  }
-
-  .appmenu-edit-button:not([disabled]):hover {
-    border: 1px solid #b8d6fb;
-    box-shadow: inset 0 0 1px white;
-    background: linear-gradient(#fafbfd, #ebf3fd);
-    transition: .2s ease-in;
-  }
 }
 
 #appmenuSecondaryPane-spacer {
@@ -365,33 +288,6 @@
 
 /* ::::: bookmark buttons ::::: */
 
-toolbarbutton.bookmark-item {
-  margin: 0;
-  padding: 2px 3px;
-}
-
-toolbarbutton.bookmark-item:hover:active:not([disabled="true"]),
-toolbarbutton.bookmark-item[open="true"] {
-  padding-top: 3px;
-  padding-bottom: 1px;
-  -moz-padding-start: 4px;
-  -moz-padding-end: 2px;
-}
-
-.bookmark-item:not(#bookmarks-menu-button) > .toolbarbutton-icon {
-  width: 16px;
-  height: 16px;
-}
-
-/* Prevent [mode="icons"] from hiding the label */
-.bookmark-item > .toolbarbutton-text {
-  display: -moz-box !important;
-}
-
-.bookmark-item > .toolbarbutton-menu-dropmarker {
-  display: none;
-}
-
 #wrapper-personal-bookmarks[place="palette"] > .toolbarpaletteitem-box {
   background: url("chrome://browser/skin/places/bookmarksToolbar.png") no-repeat center;
 }
@@ -485,7 +381,7 @@ menuitem.bookmark-item {
 /* ::::: primary toolbar buttons ::::: */
 
 .toolbarbutton-1 {
-  list-style-image: url("chrome://browser/skin/Toolbar.png");
+  list-style-image: var(--toolbarbutton-large-image);
 }
 
 toolbar[mode=full] .toolbarbutton-1:not([type=menu-button]) {
@@ -672,7 +568,7 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
 }
 
 #bookmarks-menu-button.bookmark-item {
-  list-style-image: url("chrome://browser/skin/Toolbar.png") !important;
+  list-style-image: var(--toolbarbutton-large-image) !important;
 }
 
 /* print button */
@@ -753,21 +649,12 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
   -moz-image-region: rect(0px 24px 24px 0px);
 }
 
-/* download status button */
-#status4evar-download-button #status4evar-download-icon,
-#status4evar-download-button:-moz-lwtheme-brighttext #status4evar-download-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"),
-                              0, 192, 32, 160) center no-repeat !important;
-  width:32px !important;
-  height:32px !important;
-}
-
 /* ::::: 24px primary toolbar buttons ::::: */
 
 toolbar[iconsize="small"] .toolbarbutton-1 {
   -moz-box-orient: vertical;
   min-width: 0;
-  list-style-image: url("chrome://browser/skin/Toolbar-small.png");
+  list-style-image: var(--toolbarbutton-small-image);
 }
 
 toolbar[iconsize="small"] .toolbarbutton-1[type="menu"]:not(:-moz-any(#back-button, #forward-button)) {
@@ -805,7 +692,7 @@ toolbar[iconsize="small"] #reload-button {
 /* home button */
 
 #home-button.bookmark-item {
-  list-style-image: url("chrome://browser/skin/Toolbar-small.png");
+  list-style-image: var(--toolbarbutton-small-image);
 }
 toolbar[iconsize="small"] #home-button,
 #home-button.bookmark-item {
@@ -837,7 +724,7 @@ toolbar[iconsize="small"] #bookmarks-menu-button {
 }
 
 toolbar[iconsize="small"] #bookmarks-menu-button.bookmark-item {
-  list-style-image: url("chrome://browser/skin/Toolbar-small.png") !important;
+  list-style-image: var(--toolbarbutton-small-image) !important;
 }
 
 toolbar[iconsize="small"] #bookmarks-menu-button.bookmark-item > .toolbarbutton-icon {
@@ -919,16 +806,6 @@ toolbar[iconsize="small"] #sync-button {
 toolbar[iconsize="small"] #sync-button[status="active"] {
   list-style-image: url("chrome://browser/skin/sync-16-throbber.png");
   -moz-image-region: rect(0px 16px 16px 0px);
-}
-
-
-/* download status button */
-toolbar[iconsize="small"] #status4evar-download-button #status4evar-download-icon,
-toolbar[iconsize="small"] #status4evar-download-button:-moz-lwtheme-brighttext #status4evar-download-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/Toolbar-small.png"),
-                              0, 144, 24, 120) center no-repeat !important;
-  width:24px !important;
-  height:24px !important;
 }
 
 /* ::::: fullscreen window controls ::::: */
@@ -1397,118 +1274,6 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   -moz-image-region: rect(0, 48px, 16px, 32px);
 }
 
-/* social share panel */
-
-#social-share-panel > iframe {
-  background: linear-gradient(to bottom, #f0f4f7, #fafbfc);
-  width: 300px;
-  height: 150px;
-}
-
-#social-share-button {
-  list-style-image: url(chrome://browser/skin/social/share-button.png);
-  -moz-image-region: rect(0, 16px, 16px, 0);
-}
-
-.social-share-toolbar {
-  border-right: 1px solid #e2e5e8;
-  background: linear-gradient(to bottom, #ffffff, #f5f7fa);
-}
-
-#social-share-provider-buttons {
-  padding: 6px;
-}
-
-#social-share-provider-buttons > .share-provider-button {
-  -moz-appearance: none;
-  padding: 5px;
-  margin: 1px;
-  border: none;
-  background: none;
-  border-radius: 2px;
-}
-
-#social-share-provider-buttons > .share-provider-button[checked="true"]:not([disabled="true"]),
-#social-share-provider-buttons > .share-provider-button:hover,
-#social-share-provider-buttons > .share-provider-button:active {
-  padding: 4px;
-  border: 1px solid #aeb8c1;
-  box-shadow: inset 1px 1px 1px rgba(10, 31, 51, 0.1);
-}
-
-#social-share-provider-buttons > .share-provider-button[checked="true"]:not([disabled="true"]) {
-  background: linear-gradient(to bottom, rgba(230,232,234,.65), #d2d5d9);
-}
-
-#social-share-provider-buttons > .share-provider-button > .toolbarbutton-text {
-  display: none;
-}
-#social-share-provider-buttons > .share-provider-button > .toolbarbutton-icon {
-  width: 16px;
-  min-height: 16px;
-  max-height: 16px;
-}
-
-/* fixup corners for share panel */
-.social-panel > .social-panel-frame {
-  border-radius: inherit;
-}
-
-#social-share-panel {
-  max-height: 600px;
-  min-height: 100px;
-  max-width: 800px;
-  min-width: 300px;
-}
-
-.social-share-frame {
-  background: linear-gradient(to bottom, #f0f4f7, #fafbfc);
-  width: 330px;
-  height: 150px;
-  /* we resize our panels dynamically, make it look nice */
-  transition: height 100ms ease-out, width 100ms ease-out;
-}
-
-.social-share-frame:-moz-locale-dir(ltr) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-right-radius: inherit;
-  border-bottom-right-radius: inherit;
-}
-
-.social-share-frame:-moz-locale-dir(rtl) {
-  border-top-left-radius: inherit;
-  border-bottom-left-radius: inherit;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-#social-share-panel > .social-share-toolbar:-moz-locale-dir(ltr) {
-  border-top-left-radius: inherit;
-  border-bottom-left-radius: inherit;
-}
-
-#social-share-panel > .social-share-toolbar:-moz-locale-dir(rtl) {
-  border-top-right-radius: inherit;
-  border-bottom-right-radius: inherit;
-}
-
-#social-share-provider-buttons:-moz-locale-dir(ltr) {
-  border-top-left-radius: inherit;
-  border-bottom-left-radius: inherit;
-}
-
-#social-share-provider-buttons:-moz-locale-dir(rtl) {
-  border-top-right-radius: inherit;
-  border-bottom-right-radius: inherit;
-}
-
-/* social recommending panel */
-
-#social-mark-button {
-  -moz-image-region: rect(0, 16px, 16px, 0);
-}
-
 /* star button */
 
 #star-button {
@@ -1683,8 +1448,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   background-origin: border-box;
 }
 
-.tabbrowser-arrowscrollbox > .scrollbutton-up:-moz-lwtheme-brighttext,
-.tabbrowser-arrowscrollbox > .scrollbutton-down:-moz-lwtheme-brighttext {
+toolbar[brighttext] .tabbrowser-arrowscrollbox > .scrollbutton-up,
+toolbar[brighttext] .tabbrowser-arrowscrollbox > .scrollbutton-down {
   list-style-image: url(chrome://browser/skin/tabbrowser/tab-arrow-left-inverted.png);
 }
 
@@ -1737,8 +1502,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 .tabs-newtab-button:-moz-lwtheme-brighttext,
-#TabsToolbar > #new-tab-button:-moz-lwtheme-brighttext,
-#TabsToolbar > toolbarpaletteitem > #new-tab-button:-moz-lwtheme-brighttext {
+#TabsToolbar[brighttext] > #new-tab-button,
+#TabsToolbar[brighttext] > toolbarpaletteitem > #new-tab-button {
   list-style-image: url(chrome://browser/skin/tabbrowser/newtab-inverted.png);
 }
 
@@ -1769,7 +1534,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   -moz-image-region: rect(0, 13px, 11px, 0);
 }
 
-#alltabs-button[type="menu"]:-moz-lwtheme-brighttext {
+toolbar[brighttext] #alltabs-button[type="menu"] {
   list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow-inverted.png");
 }
 
@@ -2382,6 +2147,16 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   border: none;
   padding: 0 5px;
   -moz-appearance: none;
+}
+
+toolbar[mode="text"] #addonbar-closebutton {
+  padding: 0 0 0 5px;
+  margin-left: 0px;
+  margin-right: -5px;
+}
+
+toolbar[mode="text"] #addonbar-closebutton > .toolbarbutton-icon {
+  display: -moz-box;
 }
 
 /* Status panel */
@@ -3051,16 +2826,7 @@ html|*#gcli-output-frame {
   -moz-margin-end: 5px;
 }
 
-/* Social toolbar item */
-
-#social-provider-button {
-  -moz-image-region: rect(0, 16px, 16px, 0);
-  list-style-image: url(chrome://browser/skin/social/services-16.png);
-}
-
-#social-provider-button > .toolbarbutton-menu-dropmarker {
-  display: none;
-}
+/* Badge toolbar item */
 
 .toolbarbutton-badge-container {
   margin: 0;
@@ -3097,348 +2863,7 @@ html|*#gcli-output-frame {
   right: auto;
 }
 
-.popup-notification-icon[popupid="servicesInstall"] {
-  list-style-image: url(chrome://browser/skin/social/services-64.png);
-}
-#servicesInstall-notification-icon {
-  list-style-image: url(chrome://browser/skin/social/services-16.png);
-}
-#social-undoactivation-button,
-#servicesInstall-learnmore-link {
-  -moz-margin-start: 0; /* override default label margin to match description margin */
-}
-
-#socialActivatedNotification .popup-notification-button-container {
-  margin-left: 6px;
-}
-
-.social-activation-icon {
-  width: auto;
-  height: auto;
-  max-height: 64px;
-  max-width: 64px;
-}
-
-#social-activation-message {
-  max-width: 250px;
-}
-
-#social-activation-message > label {
-  margin: 0;
-}
-
-/* social toolbar provider menu */
-.social-statusarea-popup {
-  margin-top: 0;
-  margin-left: -12px;
-  margin-right: -12px;
-}
-
-.social-statusarea-user {
-  -moz-appearance: none;
-  border-bottom: 1px solid rgb(221,221,221);
-  background-color: -moz-Dialog;
-  position: relative;
-  cursor: pointer;
-  list-style-image:url("chrome://global/skin/icons/information-32.png");
-}
-
-.social-statusarea-user-portrait {
-  width: 32px;
-  height: 32px;
-  border-radius: 2px;
-  margin: 10px;
-}
-
-.social-statusarea-loggedInStatus {
-  -moz-appearance: none;
-  background: transparent;
-  border: none;
-  color: -moz-nativehyperlinktext;
-  min-width: 0;
-  margin: 0 6px;
-  list-style-image: none;
-}
-
-.social-statusarea-user[_moz-menuactive] > vbox > .social-statusarea-loggedInStatus {
-  text-decoration: underline;
-}
-
-.social-panel > .panel-arrowcontainer > .panel-arrowcontent {
-  padding: 0;
-}
-
-.social-panel-frame {
-  border-radius: inherit;
-}
-
-
-.chat-status-icon {
-  max-height: 16px;
-  max-width: 16px;
-  padding: 0;
-}
-
-.chat-toolbarbutton {
-  -moz-appearance: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  background: none;
-  width: 16px;
-}
-
-.chat-toolbarbutton > .toolbarbutton-text {
-  display: none;
-}
-
-.chat-toolbarbutton > .toolbarbutton-icon {
-  width: inherit;
-}
-
-.chat-close-button {
-  list-style-image: url('chrome://browser/skin/social/chat-icons.png');
-  -moz-image-region: rect(0, 16px, 16px, 0);
-}
-
-.chat-close-button:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
-}
-
-.chat-close-button:hover:active {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
-}
-
-.chat-minimize-button {
-  list-style-image: url('chrome://browser/skin/social/chat-icons.png');
-  -moz-image-region: rect(16px, 16px, 32px, 0);
-}
-
-.chat-minimize-button:hover {
-  -moz-image-region: rect(16px, 32px, 32px, 16px);
-}
-
-.chat-minimize-button:hover:active {
-  -moz-image-region: rect(16px, 48px, 32px, 32px);
-}
-
-.chat-swap-button {
-  list-style-image: url('chrome://browser/skin/social/chat-icons.png');
-  -moz-image-region: rect(48px, 16px, 64px, 0);
-}
-
-.chat-swap-button:hover {
-  -moz-image-region: rect(48px, 32px, 64px, 16px);
-}
-
-.chat-swap-button:hover:active {
-  -moz-image-region: rect(48px, 48px, 64px, 32px);
-}
-
-chatbar > chatbox > .chat-titlebar > .chat-swap-button {
-  list-style-image: url('chrome://browser/skin/social/chat-icons.png');
-  -moz-image-region: rect(32px, 16px, 48px, 0);
-}
-
-chatbar > chatbox > .chat-titlebar > .chat-swap-button:hover {
-  -moz-image-region: rect(32px, 32px, 48px, 16px);
-}
-
-chatbar > chatbox > .chat-titlebar > .chat-swap-button:hover:active {
-  -moz-image-region: rect(32px, 48px, 48px, 32px);
-}
-
-@media (min-resolution: 2dppx) {
-  .chat-close-button {
-    list-style-image: url('chrome://browser/skin/social/chat-icons@2x.png');
-    -moz-image-region: rect(0, 32px, 32px, 0);
-  }
-
-  .chat-close-button:hover {
-    -moz-image-region: rect(0, 64px, 32px, 32px);
-  }
-
-  .chat-close-button:hover:active {
-    -moz-image-region: rect(0, 96px, 32px, 64px);
-  }
-
-  .chat-minimize-button {
-    list-style-image: url('chrome://browser/skin/social/chat-icons@2x.png');
-    -moz-image-region: rect(32px, 32px, 64px, 0);
-  }
-
-  .chat-minimize-button:hover {
-    -moz-image-region: rect(32px, 64px, 64px, 32px);
-  }
-
-  .chat-minimize-button:hover:active {
-    -moz-image-region: rect(32px, 96px, 64px, 64px);
-  }
-
-  .chat-swap-button {
-    list-style-image: url('chrome://browser/skin/social/chat-icons@2x.png');
-    -moz-image-region: rect(96px, 32px, 128px, 0);
-  }
-
-  .chat-swap-button:hover {
-    -moz-image-region: rect(96px, 64px, 128px, 32px);
-  }
-
-  .chat-swap-button:hover:active {
-    -moz-image-region: rect(96px, 96px, 128px, 64px);
-  }
-
-  chatbar > chatbox > .chat-titlebar > .chat-swap-button {
-    list-style-image: url('chrome://browser/skin/social/chat-icons@2x.png');
-    -moz-image-region: rect(64px, 32px, 96px, 0);
-  }
-
-  chatbar > chatbox > .chat-titlebar > .chat-swap-button:hover {
-    -moz-image-region: rect(64px, 64px, 96px, 32px);
-  }
-
-  chatbar > chatbox > .chat-titlebar > .chat-swap-button:hover:active {
-    -moz-image-region: rect(64px, 96px, 96px, 64px);
-  }
-}
-
-.chat-title {
-  font-weight: bold;
-  color: black;
-  text-shadow: none;
-  cursor: inherit;
-}
-
-.chat-titlebar {
-  height: 20px;
-  min-height: 20px;
-  width: 100%;
-  margin: 0;
-  padding: 2px;
-  -moz-padding-start: 6px;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  cursor: pointer;
-}
-
-.chat-titlebar > .notification-anchor-icon {
-  margin-left: 2px;
-  margin-right: 2px;
-}
-
-.chat-titlebar[minimized="true"] {
-  border-bottom: none;
-}
-
-.chat-titlebar[activity] {
-  background-image: radial-gradient(ellipse closest-side at center, rgb(255,255,255), rgba(255,255,255,0));
-  background-repeat: no-repeat;
-  background-size: 100% 20px;
-  background-position: 0 -10px;
-}
-
-.chat-frame {
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-}
-
-.chatbar-button {
-  list-style-image: url("chrome://browser/skin/social/services-16.png");
-  margin: 0;
-  padding: 2px;
-  height: 21px;
-  width: 21px;
-  border: 1px solid #ccc;
-  border-bottom: none;
-}
-
-@media (min-resolution: 2dppx) {
-  .chatbar-button {
-    list-style-image: url("chrome://browser/skin/social/services-16@2x.png");
-  }
-}
-
-.chatbar-button > .toolbarbutton-icon {
-  width: 16px;
-}
-
-.chatbar-button > menupopup > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
-  width: auto;
-  height: auto;
-  max-height: 16px;
-  max-width: 16px;
-}
-
-.chatbar-button[open="true"] {
-  box-shadow: inset 0 2px 5px rgba(0,0,0,0.6), 0 1px rgba(255,255,255,0.2);
-}
-
-.chatbar-button > .toolbarbutton-text,
-.chatbar-button > .toolbarbutton-menu-dropmarker {
-  display: none;
-}
-
-.chatbar-button > menupopup > menuitem[activity] {
-  font-weight: bold;
-}
-
-.chatbar-innerbox {
-  background: transparent;
-  margin: -285px 0 0;
-  overflow: hidden;
-}
-
-chatbar {
-  -moz-margin-end: 20px;
-}
-
-chatbox {
-  -moz-margin-start: 4px;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-bottom: none;
-}
-
-window > chatbox {
-  -moz-margin-start: 0px;
-  margin: 0px;
-  border: none;
-  padding: 0px;
-}
-
-.chat-titlebar {
-  background-color: #c4cfde;
-  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
-}
-
-.chat-titlebar[selected] {
-  background-color: #dae3f0;
-}
-
-.chatbar-button {
-  -moz-appearance: none;
-  background-color: #c4cfde;
-  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
-}
-
-.chatbar-button > .toolbarbutton-icon {
-  -moz-margin-end: 0;
-}
-
-.chatbar-button:hover,
-.chatbar-button[open="true"] {
-  background-color: #dae3f0;
-}
-
-.chatbar-button[activity]:not([open="true"]) {
-  background-image: radial-gradient(circle farthest-corner at center 3px, rgb(255,255,255) 3%, rgba(186,221,251,0.75) 40%, rgba(127,179,255,0.5) 80%, rgba(127,179,255,0.25));
-}
-
-chatbox {
-  border-top-left-radius: 2.5px;
-  border-top-right-radius: 2.5px;
-}
+/* Private browsing indicator */
 
 #main-window[privatebrowsingmode=temporary] #toolbar-menubar {
   background-image: url("chrome://browser/skin/privatebrowsing-dark.png");
