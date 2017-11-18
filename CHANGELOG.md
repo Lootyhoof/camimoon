@@ -1,5 +1,18 @@
 # Changelog
 
+### 2.0.0
+- merge in macOS styling (basic macOS support)
+- fix statusbar progressmeter
+- improve cross-platform styling
+- provide smaller toolbar image for extension compatibility
+- remove Social API components
+- improve download panel appearance
+- sync plugins UI with default
+- sync devtools styling with default
+- Linux: redesign appmenu button
+- Windows: draw a background on Win10 to improve accent color detection
+- cleanup redundant code
+
 ### 1.5.0
 - sync about:support styling with default
 - sync about:permissions styling with default
