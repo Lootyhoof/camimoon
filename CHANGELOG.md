@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.1.0
+- add initial Pale Moon 28 support
+- don't use background image on standalone image viewer
+
 ### 2.0.0
 - merge in macOS styling (basic macOS support)
 - fix statusbar progressmeter
