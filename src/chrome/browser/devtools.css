@@ -569,14 +569,3 @@ html|*#gcli-output-frame {
   border-radius: 1px;
   margin-inline-end: 5px;
 }
-
-/* Error counter */
-
-#developer-toolbar-toolbox-button[error-count]:before {
-  color: #FDF3DE;
-  min-width: 16px;
-  text-shadow: none;
-  background-image: linear-gradient(#B4211B, #8A1915);
-  border-radius: 1px;
-  margin-inline-end: 5px;
-}
