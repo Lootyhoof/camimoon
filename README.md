@@ -1,5 +1,5 @@
 # Camimoon
-![Preview](http://i64.tinypic.com/x5e1oh.png)
+![Preview](https://i.imgur.com/lIABOWB.png)
 
 "Camino" theme for Pale Moon. Inspired by (and using icons from) "Camifox" by falconer. Based on Qute 4 PM (originally by Murphy).
 
