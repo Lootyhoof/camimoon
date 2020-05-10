@@ -134,7 +134,7 @@
 }
 
 #appmenuPrimaryPane {
-  border-inline-end: 1px solid ThreeDShadow;
+  border-inline-end: 1px solid var(--shadow-color);
 }
 
 #appmenuSecondaryPane-spacer {
@@ -809,50 +809,6 @@ toolbar[iconsize="small"] #sync-button[status="active"] {
   -moz-image-region: rect(0px 16px 16px 0px);
 }
 
-/* ::::: fullscreen window controls ::::: */
-
-#window-controls {
-  margin-inline-start: 4px;
-}
-
-#minimize-button,
-#restore-button,
-#close-button {
-  list-style-image: url("chrome://global/skin/icons/windowControls.png");
-  padding: 0;
-}
-
-#minimize-button {
-  -moz-image-region: rect(0, 16px, 16px, 0);
-}
-#minimize-button:hover {
-  -moz-image-region: rect(16px, 16px, 32px, 0);
-}
-#minimize-button:hover:active {
-  -moz-image-region: rect(32px, 16px, 48px, 0);
-}
-#restore-button {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
-}
-#restore-button:hover {
-  -moz-image-region: rect(16px, 32px, 32px, 16px);
-}
-#restore-button:hover:active {
-  -moz-image-region: rect(32px, 32px, 48px, 16px);
-}
-#close-button {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
-  -moz-appearance: none;
-  border-style: none;
-  margin: 2px;
-}
-#close-button:hover {
-  -moz-image-region: rect(16px, 48px, 32px, 32px);
-}
-#close-button:hover:active {
-  -moz-image-region: rect(32px, 48px, 48px, 32px);
-}
-
 /* ::::: Location Bar ::::: */
 
 #urlbar,
@@ -861,7 +817,7 @@ toolbar[iconsize="small"] #sync-button[status="active"] {
   margin: 1px 3px;
   padding: 0;
   background-clip: padding-box;
-  border: 1px solid ThreeDShadow;
+  border: 1px solid var(--shadow-color);
   border-radius: 2px;
 }
 
@@ -1330,7 +1286,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 .panel-promo-box {
   margin: 10px -10px -10px;
   padding: 8px 10px;
-  border-top: 1px solid ThreeDShadow;
+  border-top: 1px solid var(--shadow-color);
   background-image: linear-gradient(hsla(0,0%,0%,.15), hsla(0,0%,0%,.08) 6px);
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -1680,7 +1636,7 @@ toolbar[brighttext] #alltabs-button[type="menu"] {
 
 .alltabs-item[tabIsVisible] {
   /* box-shadow instead of background-color to work around native styling */
-  box-shadow: inset -5px 0 ThreeDShadow;
+  box-shadow: inset -5px 0 var(--shadow-color);
 }
 
 /* Tabstrip close button */
@@ -2230,7 +2186,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 .allTabs-preview-inner > .tabPreview-canvas {
   background-color: rgb(60%,60%,60%);
-  box-shadow: 0 0 1.5px ThreeDShadow;
+  box-shadow: 0 0 1.5px var(--shadow-color);
 }
 
 .allTabs-preview:not(:hover):not([closebuttonhover]) > html|canvas {
@@ -2345,7 +2301,7 @@ toolbar[mode="text"] #addonbar-closebutton > .toolbarbutton-icon {
 }
 
 .click-to-play-plugins-notification-center-box {
-  border: 1px solid ThreeDShadow;
+  border: 1px solid var(--shadow-color);
   margin: 10px;
 }
 
