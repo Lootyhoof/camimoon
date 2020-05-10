@@ -3,8 +3,8 @@ skin	communicator	camimoon	chrome/communicator/
 skin	global		camimoon	chrome/global/
 skin	mozapps		camimoon	chrome/mozapps/
 
-skin	os			camimoon	chrome/os/winnt/		os=WINNT	
-skin	os			camimoon	chrome/os/linux/		os=Linux
+skin	os			camimoon	chrome/os/linux/
+skin	os			camimoon	chrome/os/winnt/		os=WINNT
 skin	os			camimoon	chrome/os/darwin/		os=Darwin
 
 override chrome://browser/skin/autocomplete.css chrome://global/skin/autocomplete.css
