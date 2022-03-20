@@ -31,3 +31,24 @@ richlistbox[seltype="multiple"]:focus > richlistitem[current="true"][selected="t
   outline: 1px dotted #F3D982; /* TODO: find a suitable system color */
 }
 
+@media (prefers-color-scheme: dark) {
+  richlistbox {
+    -moz-appearance: none;
+    background-color: rgb(43, 43, 43);
+    color: rgb(255, 255, 255);
+  }
+  
+  richlistbox[disabled="true"] {
+    color: GrayText;
+  }
+  
+  richlistbox:focus > richlistitem[selected="true"] {
+    background-color: rgb(83, 83, 83);
+    color: rgb(255, 255, 255);
+  }
+  
+  richlistbox[seltype="multiple"]:focus > richlistitem[current="true"] {
+    outline: 1px dotted rgb(255, 255, 255);
+  }
+}
+

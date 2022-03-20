@@ -211,3 +211,62 @@ label[disabled="true"] {
 .close-icon:hover:active {
   -moz-image-region: rect(0, 48px, 16px, 32px);
 }
+
+@media (prefers-color-scheme: dark) {
+  window,
+  page,
+  dialog,
+  wizard,
+  prefwindow {
+    -moz-appearance: none;
+    background-color: rgb(73, 73, 73);
+    color: #fff;
+  }
+
+  statusbar {
+    -moz-appearance: none;
+    border-top: 1px solid rgb(66, 66, 66);
+    border-left: 1px solid rgb(39, 39, 39);
+    border-right: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(150, 150, 150);
+    background-color: rgb(73, 73, 73);
+    min-height: 22px;
+  }
+  
+  statusbarpanel {
+    -moz-appearance: none;
+    -moz-box-align: center;
+    -moz-box-pack: center;
+    border-left: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid rgb(150, 150, 150);
+    border-right: 1px solid rgb(39, 39, 39);
+    border-bottom: 1px solid rgb(39, 39, 39);
+    padding: 0 4px;
+  }
+
+  sidebarheader {
+    -moz-appearance: none;
+    height: 25px;
+    background-color: rgb(73, 73, 73);
+    border-bottom: 1px solid rgb(39, 39, 39);
+    border-top: 1px solid rgb(150, 150, 150);
+  }
+
+  .inset {
+    border: 1px solid rgb(39, 39, 39);
+    border-right-color: rgb(39, 39, 39);
+    border-bottom-color: rgb(39, 39, 39);
+    margin: 0 5px 5px;
+  }
+  
+  .outset {
+    border: 1px solid rgb(39, 39, 39);
+    border-left-color: rgb(39, 39, 39);
+    border-top-color: rgb(39, 39, 39);
+  }
+
+  separator.groove:not([orient="vertical"]) {
+    border-top: 1px solid rgb(39, 39, 39);
+    border-bottom: 1px solid rgb (150, 150, 150);
+  }
+}

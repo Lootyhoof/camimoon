@@ -74,3 +74,23 @@ radio[pane][selected="true"] {
   -moz-appearance: none;
 }
 
+@media (prefers-color-scheme: dark) {
+  .paneSelector {
+    border-bottom: 1px solid rgb(96, 96, 96);
+    background-color: rgb(43, 43, 43);
+    color: rgb(255, 255, 255);
+  }
+  
+  radio[pane]:hover {
+    background-color: rgb(96, 96, 96);
+    color: rgb(255, 255, 255);
+    -moz-appearance: none;
+  }
+  
+  radio[pane][selected="true"] {
+    background-color: rgb(83, 83, 83);
+    color: rgb(255, 255, 255); 
+    -moz-appearance: none;
+  }
+}
+

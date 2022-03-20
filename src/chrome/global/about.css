@@ -2,23 +2,42 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+:root {
+  --html-bg: -moz-Dialog;
+  --html-color: -moz-DialogText;
+  --body-color: -moz-FieldText;
+  --border-color: ThreeDShadow;
+  --body-bg: -moz-Field;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --html-bg: rgb(73, 73, 73);
+    --html-color: #fff;
+    --body-color: #fff;
+    --border-color: rgb(96, 96, 96);
+    --body-bg: rgb(83, 83, 83);
+  }
+}
+
 html {
-  background: -moz-Dialog;
+  background: var(--html-bg);
+  color: var(--html-color);
   padding: 0 1em;
   font: message-box;
 }
 
 body {
-  color: -moz-FieldText;
+  color: var(--body-color);
   position: relative;
   min-width: 330px;
   max-width: 50em;
   margin: 4em auto;
-  border: 1px solid ThreeDShadow;
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 3em;
   padding-inline-start: 30px;
-  background: -moz-Field;
+  background: var(--body-bg);
 }
 
 .aboutPageWideContainer {

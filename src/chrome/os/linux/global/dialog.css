@@ -72,3 +72,20 @@ dialogheader {
 .header-large > .dialogheader-description {
   margin-inline-start: 12px !important;
 }
+
+@media (prefers-color-scheme: dark) {
+  dialogheader {
+    -moz-border-top-colors: rgb(39, 39, 39) transparent;
+    -moz-border-right-colors: rgb(39, 39, 39) transparent;
+    -moz-border-bottom-colors: rgb(39, 39, 39) transparent;
+    -moz-border-left-colors: rgb(39, 39, 39) transparent;
+    background-color: rgb(91, 101, 116);
+    color: rgb(255, 255, 255);
+  }
+
+  .header-large {
+    -moz-border-bottom-colors: rgb(39, 39, 39) transparent;
+    background-color: rgb(83, 83, 83);
+    color: rgb(255, 255, 255);
+  }
+}

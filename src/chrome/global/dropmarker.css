@@ -15,7 +15,7 @@ dropmarker {
   -moz-border-left-colors: ThreeDLightShadow ThreeDHighlight;
   background-color: -moz-Dialog;
   padding: 1px;
-  list-style-image: url("chrome://global/skin/arrow/arrow-dn.gif");
+  list-style-image: url("chrome://global/skin/arrow/arrow-v.svg#dn");
   -moz-image-region: auto;
 }
 
@@ -31,5 +31,28 @@ dropmarker:hover:active:not([disabled="true"]) {
 }
 
 dropmarker[disabled="true"] {
-  list-style-image: url("chrome://global/skin/arrow/arrow-dn-dis.gif");
+  list-style-image: url("chrome://global/skin/arrow/arrow-v.svg#dn-dis");
+}
+
+@media (prefers-color-scheme: dark) {
+  dropmarker {
+    -moz-appearance: none;
+    -moz-border-top-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-right-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-bottom-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-left-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    background-color: rgb(83, 83, 83);
+    border-radius: 3px;
+  }
+
+  dropmarker > image {
+    width: 9px;
+  }
+
+  dropmarker:hover:active:not([disabled="true"]) {
+    -moz-border-top-colors: rgba(0, 0, 0, 0.6) transparent;
+    -moz-border-right-colors: rgba(0, 0, 0, 0.6) transparent;
+    -moz-border-bottom-colors: rgba(0, 0, 0, 0.6) transparent;
+    -moz-border-left-colors: rgba(0, 0, 0, 0.6) transparent;
+  }
 }

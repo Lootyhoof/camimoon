@@ -52,41 +52,43 @@ menulist {
 
 /* ..... dropmarker ..... */
 
-menulist[disabled="true"]:hover:active > .menulist-dropmarker {
-  -moz-border-top-colors: ThreeDLightShadow ThreeDHighlight;
-  -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
-  -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
-  -moz-border-left-colors: ThreeDLightShadow ThreeDHighlight;
-  padding: 1px;
-}
+@media not all and (prefers-color-scheme: dark) {
+  menulist[disabled="true"]:hover:active > .menulist-dropmarker {
+    -moz-border-top-colors: ThreeDLightShadow ThreeDHighlight;
+    -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
+    -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
+    -moz-border-left-colors: ThreeDLightShadow ThreeDHighlight;
+    padding: 1px;
+  }
 
-menulist:hover:active > .menulist-dropmarker {
-  -moz-border-top-colors: ThreeDShadow ThreeDFace;
-  -moz-border-right-colors: ThreeDShadow ThreeDFace;
-  -moz-border-bottom-colors: ThreeDShadow ThreeDFace;
-  -moz-border-left-colors: ThreeDShadow ThreeDFace;
-  padding-top: 2px;
-  padding-bottom: 0px;
-  padding-inline-start: 2px;
-  padding-inline-end: 0px;
-}
+  menulist:hover:active > .menulist-dropmarker {
+    -moz-border-top-colors: ThreeDShadow ThreeDFace;
+    -moz-border-right-colors: ThreeDShadow ThreeDFace;
+    -moz-border-bottom-colors: ThreeDShadow ThreeDFace;
+    -moz-border-left-colors: ThreeDShadow ThreeDFace;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    padding-inline-start: 2px;
+    padding-inline-end: 0px;
+  }
 
-/* ..... focused state ..... */
+  /* ..... focused state ..... */
 
-menulist:focus:not([open="true"]) > .menulist-label-box {
-  background-color: Highlight;
-  color: HighlightText;
-}
+  menulist:focus:not([open="true"]) > .menulist-label-box {
+    background-color: Highlight;
+    color: HighlightText;
+  }
 
-menulist:-moz-focusring:not([open="true"]) > .menulist-label-box {
-  border: 1px dotted ThreeDDarkShadow;
-}
+  menulist:-moz-focusring:not([open="true"]) > .menulist-label-box {
+    border: 1px dotted ThreeDDarkShadow;
+  }
 
-/* ..... disabled state ..... */
+  /* ..... disabled state ..... */
 
-menulist[disabled="true"] {
-  background-color: -moz-Dialog;
-  color: GrayText;
+  menulist[disabled="true"] {
+    background-color: -moz-Dialog;
+    color: GrayText;
+  }
 }
 
 /* ::::: editable menulists ::::: */
@@ -131,5 +133,58 @@ html|*.menulist-editable-input {
   .menulist-icon {
     margin-top: -1px;
     margin-bottom: -1px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  menulist:not([editable="true"]) {
+    padding: 0 2px;
+    min-width: 3.5em;
+  }
+
+  menulist,
+  menulist[editable="true"] > .menulist-dropmarker {
+    -moz-appearance: none;
+    border: 2px solid;
+    border-radius: 3px;
+    background-color: rgb(73, 73, 73);
+    color: rgb(255, 255, 255);
+    -moz-border-top-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-right-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-bottom-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-left-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+  }
+
+  menulist:not([editable="true"]),
+  menulist[editable="true"] > .menulist-dropmarker {
+    background-image: linear-gradient(rgba(128,128,128,0.4) 30%, rgba(128,128,128,0.2) 50%, rgba(0,0,0,0.1) 75%, rgba(128,128,128,0.1) 100%);
+  }
+
+  menulist:not([editable="true"]):hover:not(:active),
+  menulist[editable="true"]:hover:not(:active) > .menulist-dropmarker {
+    background-color: rgb(96, 96, 96);
+    color: rgb(255, 255, 255);
+  }
+
+  menulist:not([editable="true"]):hover:active,
+  msnulist[open="true"]:not([editable="true"]),
+  menulist[editable="true"][open="true"] > .menulist-dropmarker {
+    background-color: rgb(23,23,23);
+    color: rgb(255, 255, 255);
+  }
+
+  menulist[editable="true"] {
+    background-color: rgb(83, 83, 83);
+    color: rgb(255, 255, 255);
+  }
+
+  menulist:focus {
+    border: 2px solid rgb(47, 138, 241);
+  }
+
+  .menulist-dropmarker {
+    -moz-appearance: none;
+    background: transparent;
+    border: none;
   }
 }

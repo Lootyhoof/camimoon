@@ -287,3 +287,92 @@ menulist > menupopup > menuseparator {
   max-width: none !important;
   font: message-box;
 }
+
+@media (prefers-color-scheme: dark) {
+  menu,
+  menuitem,
+  menucaption,
+  .splitmenu-menuitem {
+    -moz-appearance: none;
+    color: rgb(255, 255, 255);
+  }
+
+  @media (-moz-windows-classic) {
+    menu[disabled="true"],
+    menubar > menu[disabled="true"][_moz-menuactive="true"],
+    menuitem[disabled="true"],
+    .splitmenu-menuitem[disabled="true"] {
+      color: rgb(255,255,255);
+      text-shadow: none;
+    }
+  }
+
+  .menu-text,
+  menu.menu-iconic > .menu-iconic-left,
+  menuitem.menuitem-iconic > .menu-iconic-left,
+  .splitmenu-menuitem[iconic="true"] > .menu-iconic-left {
+    -moz-appearance: none;
+  }
+
+  .menu-right {
+    -moz-appearance: none;
+    margin: 0 0 0 6px;
+    width: 8px;
+    list-style-image: url("chrome://global/skin/arrow/arrow-h.svg#rit");
+    -moz-image-region: auto;
+  }
+
+  menubar > menu[_moz-menuactive="true"]:not([disabled="true"]),
+  menulist > menupopup > menuitem,
+  menulist > menupopup > menucaption,
+  menulist > menupopup > menu {
+    color: rgb(255, 255, 255);
+  }
+
+  menubar > menu:-moz-lwtheme[_moz-menuactive="true"]:not([disabled="true"]) {
+    background-color: rgb(96, 96, 96);
+    color: rgb(255, 255, 255) !important;
+    text-shadow: none;
+  }
+
+  menubar > menu:-moz-window-inactive {
+    color: rgb(175, 175, 175);
+  }
+
+  menu[_moz-menuactive="true"],
+  menuitem[_moz-menuactive="true"],
+  .splitmenu-menuitem[_moz-menuactive="true"],
+  menulist > menupopup > menuitem[_moz-menuactive="true"],
+  menulist > menupopup > menu[_moz-menuactive="true"] {
+    background-color: rgb(96, 96, 96);
+    color: rgb(255, 255, 255);
+  }
+
+  menuitem[type="checkbox"],
+  menuitem[type="radio"] {
+    -moz-appearance: none !important;
+  }
+
+  menuitem[checked="true"] {
+    -moz-appearance: none;
+    list-style-image: url("chrome://global/skin/menu/menu-check.svg#check");
+  }
+  
+  menuitem[checked="true"][disabled="true"],
+  menuitem[checked="true"][disabled="true"][_moz-menuactive="true"] {
+    list-style-image: url("chrome://global/skin/menu/menu-check.svg#check-dis");
+  }
+
+  menuitem[type="radio"][checked="true"] {
+    list-style-image: url("chrome://global/skin/radio/radio-check.svg#radio");
+  }
+
+  menuitem[type="radio"][checked="true"][disabled="true"],
+  menuitem[type="radio"][checked="true"][disabled="true"][_moz-menuactive="true"] {
+    list-style-image: url("chrome://global/skin/radio/radio-check.svg#radio-dis");
+  }
+
+  menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
+    width: 4px;
+  }
+}

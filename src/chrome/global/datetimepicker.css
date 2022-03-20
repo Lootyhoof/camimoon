@@ -99,49 +99,82 @@ timepicker[disabled="true"] {
 }
 
 .datepicker-previous {
-  list-style-image: url("chrome://global/skin/arrow/arrow-lft.gif");
+  list-style-image: url("chrome://global/skin/arrow/arrow-h.svg#lft");
 }
 
 .datepicker-next {
-  list-style-image: url("chrome://global/skin/arrow/arrow-rit.gif");
-}
-
-.datepicker-previous:hover {
-  list-style-image: url("chrome://global/skin/arrow/arrow-lft-hov.gif");
-}
-
-.datepicker-next:hover {
-  list-style-image: url("chrome://global/skin/arrow/arrow-rit-hov.gif");
+  list-style-image: url("chrome://global/skin/arrow/arrow-h.svg#rit");
 }
 
 .datepicker-previous[disabled="true"] {
-  list-style-image: url("chrome://global/skin/arrow/arrow-lft-dis.gif");
+  list-style-image: url("chrome://global/skin/arrow/arrow-h.svg#lft-dis");
 }
 
 .datepicker-next[disabled="true"] {
-  list-style-image: url("chrome://global/skin/arrow/arrow-rit-dis.gif");
+  list-style-image: url("chrome://global/skin/arrow/arrow-h.svg#rit-dis");
 }
 
 .datepicker-previous:-moz-locale-dir(rtl) {
-  list-style-image: url("chrome://global/skin/arrow/arrow-rit.gif");
+  list-style-image: url("chrome://global/skin/arrow/arrow-h.svg#rit");
 }
 
 .datepicker-next:-moz-locale-dir(rtl) {
-  list-style-image: url("chrome://global/skin/arrow/arrow-lft.gif");
-}
-
-.datepicker-previous:-moz-locale-dir(rtl) {
-  list-style-image: url("chrome://global/skin/arrow/arrow-rit-hov.gif");
-}
-
-.datepicker-next:-moz-locale-dir(rtl):hover {
-  list-style-image: url("chrome://global/skin/arrow/arrow-lft-hov.gif");
+  list-style-image: url("chrome://global/skin/arrow/arrow-h.svg#lft");
 }
 
 .datepicker-previous[disabled="true"]:-moz-locale-dir(rtl) {
-  list-style-image: url("chrome://global/skin/arrow/arrow-rit-dis.gif");
+  list-style-image: url("chrome://global/skin/arrow/arrow-h.svg#rit-dis");
 }
 
 .datepicker-next[disabled="true"]:-moz-locale-dir(rtl) {
-  list-style-image: url("chrome://global/skin/arrow/arrow-lft-dis.gif");
+  list-style-image: url("chrome://global/skin/arrow/arrow-h.svg#lft-dis");
+}
+
+@media (prefers-color-scheme: dark) {
+  .datetimepicker-input-box,
+  .datepicker-mainbox {
+    -moz-appearance: none;
+    -moz-border-top-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-right-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-bottom-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-left-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    background-color: rgb(83, 83, 83);
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
+  }
+
+  .datepicker-gridlabel[selected="true"] {
+    background-color: rgb(91, 101, 116);
+    color: rgb(255, 255, 255);
+  } 
+
+  datepicker[readonly="true"],
+  timepicker[readonly="true"] {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+  }
+
+  datepicker[disabled="true"],
+  timepicker[disabled="true"] {
+    background-color: transparent;
+  }
+
+  datepicker[readonly="true"] > .datetimepicker-input-box,
+  timepicker[readonly="true"] > .datetimepicker-input-box,
+  datepicker[readonly="true"] > .datepicker-mainbox {
+    background-color: rgb(23, 23, 23);
+    color: rgb(255, 255, 255);
+  }
+
+  datepicker[disabled="true"] > .datetimepicker-input-box,
+  timepicker[disabled="true"] > .datetimepicker-input-box,
+  datepicker[disabled="true"] > .datepicker-mainbox {
+    background-color: rgb(23, 23, 23);
+    color: GrayText;
+  }
+
+  .datepicker-next,
+  .datepicker-previous {
+    padding: 4px;
+  }
 }

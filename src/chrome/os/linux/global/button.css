@@ -6,7 +6,7 @@
   == Styles used by the XUL button element.
   ======================================================================= */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+  @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* :::::::::: button :::::::::: */
 
@@ -149,4 +149,75 @@ button[type="disclosure"] {
 
 button[type="disclosure"][open="true"] {
   list-style-image: url("chrome://global/skin/tree/twisty-open.png"); 
+}
+
+@media (prefers-color-scheme: dark) {
+  button {
+    -moz-appearance: none;
+    border: 2px solid;
+    border-radius: 3px;
+    background-color: rgb(73, 73, 73);
+    background-image: linear-gradient(rgba(128,128,128,0.4) 30%, rgba(128,128,128,0.2) 50%, rgba(0,0,0,0.1) 75%, rgba(128,128,128,0.1) 100%);
+    color: rgb(255, 255, 255);
+    -moz-border-top-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-right-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-bottom-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-left-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    padding: 0 3px;
+  }
+
+  button:focus {
+    -moz-border-top-colors: rgb(47, 138, 241);
+    -moz-border-right-colors: rgb(47, 138, 241);
+    -moz-border-bottom-colors: rgb(47, 138, 241);
+    -moz-border-left-colors: rgb(47, 138, 241);
+  }
+
+  button:-moz-focusring > .button-box {
+    border: 1px dotted rgb(200,200,200);
+  }
+
+  button[default="true"] {
+    -moz-border-top-colors: rgb(23, 23, 23) rgb(175, 175, 175);
+    -moz-border-right-colors: rgb(23, 23, 23) rgb(175, 175, 175);
+    -moz-border-bottom-colors: rgb(23, 23, 23) rgb(175, 175, 175);
+    -moz-border-left-colors: rgb(23, 23, 23) rgb(175, 175, 175);
+  }
+
+  button:hover:active,
+  button[open="true"],
+  button[checked="true"] {
+    background-color: rgb(23,23,23);
+    color: rgb(255, 255, 255);
+  }
+
+  button:hover:not(:active):not([disabled=true]) {
+    background-color: rgb(96, 96, 96);
+    color: rgb(255, 255, 255);
+  }
+
+  /* .......... disabled state .......... */
+
+  button[disabled="true"],
+  button[disabled="true"]:hover:active {
+    -moz-border-top-colors: rgba(0, 0, 0, 0.6) transparent !important;
+    -moz-border-right-colors: rgba(0, 0, 0, 0.6) transparent !important;
+    -moz-border-bottom-colors: rgba(0, 0, 0, 0.6) transparent !important;
+    -moz-border-left-colors: rgba(0, 0, 0, 0.6) transparent !important;
+    background-color: rgb(62,62,62);
+    background-image: none;
+    color: GrayText;
+  }
+
+  /* ::::: menu/menu-button buttons ::::: */
+
+  .button-menu-dropmarker,
+  .button-menubutton-dropmarker {
+    -moz-appearance: none !important;
+    margin: 1px;
+    background-color: transparent;
+    border: none;
+    width: 11px;
+    height: 11px;
+  }
 }

@@ -98,3 +98,39 @@ toolbarpaletteitem > toolbaritem > textbox > hbox > hbox > html|*.textbox-input 
 toolbarpaletteitem > toolbaritem > * > textbox > hbox > hbox > html|*.textbox-input {
   visibility: hidden;
 }
+
+@media (prefers-color-scheme: dark) {
+  panel[type="autocomplete"],
+  panel[type="autocomplete-richlistbox"],
+  .autocomplete-history-popup,
+  panel[type="private-autocomplete"],
+  panel[type="private-autocomplete-richlistbox"],
+  .private-autocomplete-history-popup {
+    -moz-appearance: none;
+    border-width: 1px;
+    -moz-border-top-colors: rgb(32, 32, 32);
+    -moz-border-right-colors: rgb(32, 32, 32);
+    -moz-border-bottom-colors: rgb(32, 32, 32);
+    -moz-border-left-colors: rgb(32, 32, 32);
+    padding: 0;
+    background-color: rgb(83, 83, 83);
+  }
+
+  .autocomplete-tree,
+  .private-autocomplete-tree {
+    -moz-appearance: none;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+  }
+
+  treechildren.autocomplete-treebody::-moz-tree-row(selected),
+  treechildren.private-autocomplete-treebody::-moz-tree-row(selected) {
+    background-color: rgb(110,110,110);
+  }
+
+  treechildren.autocomplete-treebody::-moz-tree-cell-text(selected),
+  treechildren.private-autocomplete-treebody::-moz-tree-cell-text(selected) {
+    color: #fff !important;
+  }
+}

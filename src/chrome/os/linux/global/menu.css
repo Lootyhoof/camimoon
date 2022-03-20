@@ -193,3 +193,92 @@ menuseparator {
   max-width: none !important;
   font: message-box;
 }
+
+@media (prefers-color-scheme: dark) {
+  menu,
+  menuitem,
+  menucaption,
+  .splitmenu-menuitem {
+    -moz-appearance: none !important;
+    color: rgb(255, 255, 255);
+    padding: 2px 0;
+  }
+
+  menu[_moz-menuactive="true"],
+  menuitem[_moz-menuactive="true"],
+  .splitmenu-menuitem[_moz-menuactive="true"] {
+    color: rgb(255, 255, 255);
+    background-color: rgb(96, 96, 96);
+  }
+
+  menu[disabled="true"],
+  menuitem[disabled="true"],
+  .splitmenu-menuitem[disabled="true"],
+  menucaption[disabled="true"] {
+    color: GrayText;
+  }
+
+  menubar > menu,
+  menubar > menu[_moz-menuactive="true"]:not([open]):not([disabled="true"]):not(:-moz-lwtheme) {
+    color: rgb(255, 255, 255);
+  }
+
+  menubar > menu[open] {
+    color: rgb(255, 255, 255);
+    background-color: rgb(96, 96, 96);
+  }
+
+  .menu-right {
+    -moz-appearance: none;
+    list-style-image: url("chrome://global/skin/arrow/arrow-h.svg#rit");
+    margin-right: 4px;
+  }
+
+  .menu-right > image {
+    width: 9px;
+  }
+
+  .menu-iconic-icon {
+    margin-left: 4px;
+  }
+
+  menuseparator {
+    -moz-appearance: none;
+    margin: 2px 3px;
+    border-top: 1px solid rgb(73, 73, 73);
+  }
+  
+  menulist > menupopup > menuseparator,
+  .menulist-menupopup > menuseparator {
+    padding: 6px 0 5px 0;
+    border-top: 1px solid rgb(73, 73, 73);
+    border-bottom: none;
+  }
+
+  menuitem[type="checkbox"],
+  menuitem[type="radio"] {
+    -moz-appearance: none !important;
+  }
+
+  menuitem[checked="true"] {
+    list-style-image: url("chrome://global/skin/menu/menu-check.svg#check");
+  }
+  
+  menuitem[checked="true"][disabled="true"],
+  menuitem[checked="true"][disabled="true"][_moz-menuactive="true"] {
+    list-style-image: url("chrome://global/skin/menu/menu-check.svg#check-dis");
+  }
+
+  menuitem[type="radio"][checked="true"] {
+    list-style-image: url("chrome://global/skin/radio/radio-check.svg#radio");
+  }
+
+  menuitem[type="radio"][checked="true"][disabled="true"],
+  menuitem[type="radio"][checked="true"][disabled="true"][_moz-menuactive="true"] {
+    list-style-image: url("chrome://global/skin/radio/radio-check.svg#radio-dis");
+  }
+
+  menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
+    width: 4px;
+  }
+}

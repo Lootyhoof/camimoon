@@ -25,8 +25,7 @@ spinbuttons {
   border: 0;
 }
 
-.spinbuttons-button:hover:active
-{
+.spinbuttons-button:hover:active {
   border: 2px solid;
   -moz-border-top-colors: ThreeDDarkShadow ThreeDShadow;
   -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
@@ -44,22 +43,55 @@ spinbuttons {
 
 .spinbuttons-up {
   -moz-appearance: spinner-upbutton;
-  background-image: url("chrome://global/skin/arrow/arrow-up.gif");
+  background-image: url("chrome://global/skin/arrow/arrow-v.svg#up");
   background-position: center center;
   background-repeat: no-repeat;
 }
 
 .spinbuttons-up[disabled="true"] {
-  background-image: url("chrome://global/skin/arrow/arrow-up-dis.gif");
+  background-image: url("chrome://global/skin/arrow/arrow-v.svg#up-dis");
 }
 
 .spinbuttons-down {
   -moz-appearance: spinner-downbutton;
-  background-image: url("chrome://global/skin/arrow/arrow-dn.gif");
+  background-image: url("chrome://global/skin/arrow/arrow-v.svg#dn");
   background-position: center center;
   background-repeat: no-repeat;
 }
 
 .spinbuttons-down[disabled="true"] {
-  background-image: url("chrome://global/skin/arrow/arrow-dn-dis.gif");
+  background-image: url("chrome://global/skin/arrow/arrow-v.svg#dn-dis");
+}
+
+@media (prefers-color-scheme: dark) {
+  spinbuttons,
+  .spinbuttons-up,
+  .spinbuttons-down {
+    -moz-appearance: none;
+  }
+  
+  .spinbuttons-button {
+    padding: 6px;
+    -moz-border-top-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-right-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-bottom-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-left-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    background-color: rgb(73, 73, 73);
+  }
+
+  .spinbuttons-button:hover:active {
+    -moz-border-top-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-right-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-bottom-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-left-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    background-color: rgb(23, 23, 23);
+  }
+  
+  .spinbuttons-button[disabled="true"] {
+    border: 2px solid;
+    -moz-border-top-colors: rgba(0, 0, 0, 0.6) transparent !important;
+    -moz-border-right-colors: rgba(0, 0, 0, 0.6) transparent !important;
+    -moz-border-bottom-colors: rgba(0, 0, 0, 0.6) transparent !important;
+    -moz-border-left-colors: rgba(0, 0, 0, 0.6) transparent !important;
+  }
 }

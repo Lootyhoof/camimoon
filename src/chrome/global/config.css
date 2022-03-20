@@ -9,64 +9,74 @@
 @import url("chrome://global/skin/");
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* ::::: warning screen ::::: */
-
-#warningScreen
-{
-  background-color: -moz-dialog;
+:root {
+  --body-bg: -moz-Field;
+  --body-color: -moz-FieldText;
+  --border-color: ThreeDShadow;
+  --border-light-color: ThreeDLightShadow;
+  --xul-bg: -moz-dialog;
 }
 
-#warningBox
-{
-  background-color: -moz-Field;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-bg: rgb(83, 83, 83);
+    --body-color: rgb(255, 255, 255); 
+    --border-color: rgb(96, 96, 96);
+    --border-light-color: rgb(43, 43, 43);
+    --xul-bg: rgb(73, 73, 73);
+  }
+}
+
+
+/* ::::: warning screen ::::: */
+
+#warningScreen {
+  background-color: var(--xul-bg);
+}
+
+#warningBox {
+  background-color: var(--body-bg);
   background-image: url("chrome://global/skin/icons/warning-large.png");
   background-repeat: no-repeat;
   background-position: 30px 3em;
-  color: -moz-FieldText;
-  border: 1px solid ThreeDShadow;
+  color: var(--body-color);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 3em;
   padding-inline-start: 78px;
   margin: 0 1em;
 }
 
-.title, .description
-{
+.title, .description {
   max-width: 50em;
   padding-inline-start: 3em;
 }
 
-#warningTitle
-{
+#warningTitle {
   margin: 0 0 .6em;
   font-size: 160%;
-  border-bottom: 1px solid ThreeDLightShadow;
+  border-bottom: 1px solid var(--border-light-color);
 }
 
-#warningText
-{
+#warningText {
   font-size: 110%;
   margin-inline-start: 0;
 }
 
-#warningButton
-{
+#warningButton {
   margin-top: 0.6em;
 }
 
-#showWarningNextTime
-{
+#showWarningNextTime {
   margin-top: 0.6em;
 }
 
 /* ::::: tree rows ::::: */
 
-treechildren::-moz-tree-cell-text(user)
-{
+treechildren::-moz-tree-cell-text(user) {
   font-weight: bold;
 }
 
-treechildren::-moz-tree-cell-text(locked)
-{
+treechildren::-moz-tree-cell-text(locked) {
   font-style: italic;
 }

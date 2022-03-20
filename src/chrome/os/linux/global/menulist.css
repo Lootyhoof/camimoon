@@ -30,8 +30,10 @@ menulist {
   margin: 1px 3px !important;
 }
 
-.menulist-dropmarker {
-  display: none;
+@media not all and (prefers-color-scheme: dark) {
+  .menulist-dropmarker {
+    display: none;
+  }
 }
 
 menulist:hover {
@@ -73,6 +75,8 @@ menulist[editable="true"] {
 menulist[editable="true"] > .menulist-dropmarker {
   display: -moz-box;
   -moz-appearance: menulist-button;
+  min-width: 2.5em;
+  min-height: 2.5em;
 }
 
 html|*.menulist-editable-input {
@@ -80,4 +84,72 @@ html|*.menulist-editable-input {
   border: none !important;
   padding: 0px !important;
   font: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  menulist:not([editable="true"]) {
+    padding: 0 2px;
+    min-width: 3.5em;
+  }
+
+  menulist,
+  menulist[editable="true"] > .menulist-dropmarker {
+    -moz-appearance: none;
+    border: 2px solid;
+    border-radius: 3px;
+    background-color: rgb(73, 73, 73);
+    color: rgb(255, 255, 255);
+    -moz-border-top-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-right-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-bottom-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-left-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+  }
+
+  menulist:not([editable="true"]),
+  menulist[editable="true"] > .menulist-dropmarker {
+    background-image: linear-gradient(rgba(128,128,128,0.4) 30%, rgba(128,128,128,0.2) 50%, rgba(0,0,0,0.1) 75%, rgba(128,128,128,0.1) 100%);
+  }
+
+  menulist:not([editable="true"]):hover:not(:active),
+  menulist[editable="true"]:hover:not(:active) > .menulist-dropmarker {
+    background-color: rgb(96, 96, 96);
+    color: rgb(255, 255, 255);
+  }
+
+  menulist:not([editable="true"]):hover:active,
+  msnulist[open="true"]:not([editable="true"]),
+  menulist[editable="true"][open="true"] > .menulist-dropmarker {
+    background-color: rgb(23,23,23);
+    color: rgb(255, 255, 255);
+  }
+
+  menulist[editable="true"] {
+    background-color: rgb(83, 83, 83);
+    color: rgb(255, 255, 255);
+  }
+
+  menulist[editable="true"] > .menulist-dropmarker {
+    min-width: 1.5em;
+    min-height: 0;
+  }
+
+  menulist:focus {
+    border: 2px solid rgb(47, 138, 241);
+  }
+
+  .menulist-editable-box,
+  .menulist-label-box {
+    -moz-appearance: none;
+  }
+
+  .menulist-editable-box {
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+
+  .menulist-dropmarker {
+    -moz-appearance: none;
+    background: transparent;
+    border: none;
+  }
 }

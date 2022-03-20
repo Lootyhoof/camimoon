@@ -98,3 +98,48 @@ menulist > menupopup {
   min-width: 0px;
 }
 
+@media (prefers-color-scheme: dark) {
+  menupopup,
+  panel {
+    -moz-appearance: none;
+  }
+
+  menupopup,
+  .panel-arrowcontent {
+    background-color: rgb(43, 43, 43);
+    color: rgb(255, 255, 255);
+    border: 2px solid;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    -moz-border-top-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-right-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-bottom-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-left-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+  }
+
+  .panel-arrow[side="top"],
+  .panel-arrow[side="bottom"] {
+    list-style-image: url("chrome://global/skin/arrow/panelarrow-vertical-dark.svg");
+  }
+
+  .panel-arrow[side="left"],
+  .panel-arrow[side="right"] {
+    list-style-image: url("chrome://global/skin/arrow/panelarrow-horizontal-dark.svg");
+  }
+
+  .panel-arrow[side="top"] {
+    margin-bottom: -2px;
+  }
+
+  .panel-arrow[side="right"] {
+    margin-left: -2px;
+  }
+
+  .panel-arrow[side="bottom"] {
+    margin-top: -2px;
+  }
+
+  .panel-arrow[side="left"] {
+    margin-right: -2px;
+  }
+}

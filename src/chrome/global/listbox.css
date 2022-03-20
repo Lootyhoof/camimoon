@@ -141,3 +141,63 @@ listheader[sortable="true"]:hover:active {
   min-height: 13px;
   background: -moz-Field no-repeat 50% 50%;
 }
+
+@media (prefers-color-scheme: dark) {
+  listbox {
+    -moz-appearance: none;
+    -moz-border-top-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-right-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-bottom-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    -moz-border-left-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    background-color: rgb(23, 23, 23);
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+  }
+
+  listheader { 
+    -moz-appearance: none;
+    border-top: none;
+    border-left: none;
+    border-right: 1px solid;
+    -moz-border-right-colors: rgb(150, 150, 150);
+    -moz-border-bottom-colors: rgb(23, 23, 23) rgb(150, 150, 150);
+    background-color: rgb(73, 73, 73);
+    background-image: linear-gradient(rgba(128,128,128,0.4) 30%, rgba(128,128,128,0.2) 50%, rgba(0,0,0,0.1) 75%, rgba(128,128,128,0.1) 100%);
+    color: rgb(255, 255, 255);
+  }
+
+  listheader:last-child {
+    border-right: none;
+  }
+  
+  listheader[sortable="true"]:hover:active {
+    -moz-border-right-colors: transparent;
+    -moz-border-bottom-colors: transparent;
+    -moz-border-left-colors: transparent;
+    background-color: rgb(23, 23, 23);
+  }
+
+  listitem[selected="true"],
+  listbox:focus > listitem[selected="true"] {
+    background-color: rgb(96, 96, 96);
+    color: rgb(255, 255, 255);
+  }
+
+  .listcell-check {
+    -moz-appearance: none;
+    -moz-box-align: center;
+    border: 1px solid;
+    -moz-border-top-colors: rgb(150, 150, 150);
+    -moz-border-right-colors: rgb(150, 150, 150);
+    -moz-border-bottom-colors: rgb(150, 150, 150);
+    -moz-border-left-colors: rgb(150, 150, 150);
+    min-width: 13px;
+    min-height: 13px;
+    background: rgb(73, 73, 73) no-repeat 50% 50%;
+    background-image: linear-gradient(rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
+  }
+
+  .listcell-check[checked="true"] {
+    background-image: url("chrome://global/skin/checkbox/cbox-check.svg#check"), linear-gradient(rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
+  }
+}

@@ -2,9 +2,31 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+:root {
+  --html-bg: -moz-Field;
+  --html-color: -moz-FieldText;
+  --table-bg: -moz-Dialog;
+  --table-color: -moz-DialogText;
+  --border-color: ThreeDShadow;
+  --header-bg: Highlight;
+  --header-color: HighlightText;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --html-bg: rgb(83, 83, 83);
+    --html-color: rgb(255, 255, 255);
+    --table-bg: rgb(73, 73, 73);
+    --table-color: rgb(255, 255, 255);
+    --border-color: rgb(39, 39, 39);
+    --header-bg: rgb(91, 101, 116);
+    --header-color: rgb(255, 255, 255);
+  }
+}
+
 html {
-  background-color: -moz-Field;
-  color: -moz-FieldText;
+  background-color: var(--html-bg);
+  color: var(--html-color);
   font: message-box;
 }
 
@@ -27,17 +49,17 @@ body {
 }
 
 table {
-  background-color: -moz-Dialog;
-  color: -moz-DialogText;
+  background-color: var(--table-bg);
+  color: var(--table-color);
   font: message-box;
   text-align: start;
   width: 100%;
-  border: 1px solid ThreeDShadow;
+  border: 1px solid var(--border-color);
   border-spacing: 0px;
 }
 
 th, td {
-  border: 1px dotted ThreeDShadow;
+  border: 1px dotted var(--border-color);
   padding: 3px;
 }
 
@@ -47,8 +69,8 @@ thead th {
 
 th {
   text-align: start;
-  background-color: Highlight;
-  color: HighlightText;
+  background-color: var(--header-bg);
+  color: var(--header-color);
 }
 
 th.column {
@@ -58,7 +80,7 @@ th.column {
 
 td {
   text-align: start;
-  border-top: 1px dotted ThreeDShadow;
+  border-top: 1px dotted var(--border-color);
 }
 
 .prefs-table {
@@ -79,9 +101,9 @@ td {
 }
 
 #action-box {
-  background-color: -moz-Dialog;
-  border: 1px solid ThreeDShadow;
-  color: -moz-DialogText;
+  background-color: var(--table-bg);
+  border: 1px solid var(--border-color);
+  color: var(--table-color);
   float: right;
   margin-top: 2em;
   margin-bottom: 20px;

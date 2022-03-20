@@ -84,3 +84,77 @@ checkbox[checked="true"][disabled="true"] > .checkbox-check {
   background-image: url("chrome://global/skin/checkbox/cbox-check-dis.gif") !important
 }
 
+@media (prefers-color-scheme: dark) {
+  /* ::::: checkbox ::::: */
+
+  checkbox {
+    -moz-appearance: none;
+    -moz-box-align: center;
+    margin: 2px 4px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-inline-start: 4px;
+    padding-inline-end: 2px;
+    border-radius: 2px;
+  }
+
+  .checkbox-label-box {
+    margin-inline-start: 2px;
+    border: 1px solid transparent;
+    padding: 0px 1px;
+  }
+
+  .checkbox-icon {
+    margin-inline-end: 2px;
+  }
+
+  .checkbox-label {
+    margin: 0 !important;
+  }
+
+  /* ..... focused state ..... */
+
+  checkbox:-moz-focusring > .checkbox-label-box {
+    border: 1px dotted rgb(200,200,200)
+  }
+
+  /* ..... disabled state ..... */
+
+  checkbox[disabled="true"] > .checkbox-check {
+    background-color: rgb(62, 62, 62);
+  }
+
+  checkbox[disabled="true"] {
+    color: GrayText;
+  }
+
+  /* ::::: checkmark image ::::: */
+
+  .checkbox-check {
+    -moz-appearance: none;
+    -moz-box-align: center;
+    border: 1px solid;
+    -moz-border-top-colors: rgb(150, 150, 150);
+    -moz-border-right-colors: rgb(150, 150, 150);
+    -moz-border-bottom-colors: rgb(150, 150, 150);
+    -moz-border-left-colors: rgb(150, 150, 150);
+    min-width: 13px;
+    min-height: 13px;
+    background: rgb(73, 73, 73) no-repeat 50% 50%;
+    background-image: linear-gradient(rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
+  }
+    
+  checkbox:hover:active > .checkbox-check {
+    background-color: rgb(96, 96, 96);
+  }
+
+  /* ..... checked state ..... */
+
+  checkbox[checked="true"] > .checkbox-check {
+    background-image: url("chrome://global/skin/checkbox/cbox-check.svg#check"), linear-gradient(rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
+  }
+
+  checkbox[checked="true"][disabled="true"] > .checkbox-check {
+    background-image: url("chrome://global/skin/checkbox/cbox-check.svg#check-dis") !important;
+  }
+}

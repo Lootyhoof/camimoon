@@ -119,7 +119,7 @@ findbar[hidden] {
 }
 
 .findbar-textbox[flash="true"] {
-  background-color: #f66;
+  background-color: yellow;
   color: black;
 }
 

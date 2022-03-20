@@ -84,7 +84,7 @@ splitter[orient="vertical"] > grippy {
   border-top: none;
   border-right: 1px solid ThreeDShadow;
   border-bottom: none;
-  border-left: 1px solid ThreeDShadow;;
+  border-left: 1px solid ThreeDShadow;
   min-width: 115px;
   min-height: 4px;
 }
