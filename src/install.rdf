@@ -9,14 +9,13 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>camimoon@lootyhoof-pm</em:id>
-    <em:version>2.7.0</em:version>
+    <em:version>2.8.0</em:version>
     <em:name>Camimoon</em:name>
     <em:description>The colourful icons of Camino, re-imagined for Pale Moon.</em:description>
     <em:creator>Lootyhoof</em:creator>
     <em:type>4</em:type>
     <em:internalName>camimoon</em:internalName>
     <em:skinnable>true</em:skinnable>
-    <em:updateURL>https://raw.githubusercontent.com/Lootyhoof/camimoon/master/update.xml</em:updateURL>
 	
     <em:contributor>Murphy</em:contributor>
     <em:contributor>tylerc.com</em:contributor>
